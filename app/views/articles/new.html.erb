@@ -1,0 +1,5 @@
+<div class="container">
+  <%= turbo_frame_tag @article, data: {"turbo-action": "advance"} do %>
+    <%= render partial: 'form' %>
+  <%end%>
+</div>

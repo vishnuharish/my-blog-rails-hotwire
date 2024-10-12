@@ -1,0 +1,13 @@
+<div class="container">
+<%= form_with model: @article, data: {"turbo-action": "advance"} do |form| %>
+  <div class="row">
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="row">
+    <%= form.rich_text_area :body, class: "form-control" %>
+  </div>
+  <div class="row">
+    <%= form.submit "Create Article", class: "btn btn-primary" %>
+  </div>
+<%end%>
+</div>

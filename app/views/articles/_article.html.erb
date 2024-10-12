@@ -1,0 +1,12 @@
+<%= turbo_frame_tag "article_#{article.id}" do %>
+  <div class="col my-4">
+    <div class="card" >
+        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top" alt="sample image">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p class="card-text"><%= article.body.to_plain_text.truncate(20) %></p>
+          <%= link_to "Read more", article_path(article), class: "btn btn-primary" %>
+        </div>
+    </div>
+  </div>
+<% end %>

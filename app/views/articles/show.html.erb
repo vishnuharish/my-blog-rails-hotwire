@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <%= turbo_frame_tag "container", data: {"turbo-action": "advance"} do %>
+  <div class="row">
+    <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="image-fluid" alt="sample image" style="height: 14rem"/>
+  </div>
+  <div class="row">
+    <h1 class="display-4 text-center"><%= @article.title %></h1>
+  </div>
+  <div class="row">
+    <%= @article.body %>
+  </div> 
+  <div class="row">
+    <%= link_to "Back to List" , articles_path, class: "link-offset-3-hover fs-4 text-end bi bi-chevron-compact-left " %>
+  </div>
+<%end%>
+</div>
