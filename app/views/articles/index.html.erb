@@ -3,12 +3,15 @@
       <div class="row row-cols-1 gx-4 gy-4">
     <%= turbo_frame_tag "articles", data: {"turbo-action": "advance"} do %>
           <%= render @articles %>
+
     <%end%>
       </div>
 </div>
 <div class="container gy-5">
   <div class="row row-cols-1 gy-4">
-  <%= turbo_frame_tag Article.new %>
+    <%= turbo_frame_tag Article.new do %>
+
   <%= link_to "New Article", new_article_path, class: "btn btn-primary", data: {turbo_frame: dom_id(Article.new)} %>
+      <% end %>
   </div>
 </div>

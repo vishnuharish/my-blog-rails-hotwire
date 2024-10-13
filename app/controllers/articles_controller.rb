@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
         format.html{ redirect_to articles_path, notice: "Article saved successfully!"}
         format.turbo_stream
       end
+    else
+      render :new, error: :unprocessable_entity
     end
   end
 
