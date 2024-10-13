@@ -5,4 +5,5 @@ class Article < ApplicationRecord
   validates :body, length: {minimum: 20}
 
   after_create_commit -> { broadcast_prepend_to "articles"  }
+  after_update_commit -> { broadcast_replace_to "articles"}
 end

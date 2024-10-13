@@ -27,6 +27,14 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    if @article.update(article_params)
+      respond_to do | format |
+        format.html{ redirect_to articles_path, notice: "Article updated successfully"}
+        format.turbo_stream
+      end
+    else
+      render :edit, error: :unprocessable_entity
+    end
   end
 
   def destroy
