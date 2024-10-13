@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  before_action -> { sleep 5}
+  # before_action -> { sleep 5}
 end
